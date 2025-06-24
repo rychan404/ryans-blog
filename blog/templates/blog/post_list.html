@@ -8,10 +8,12 @@
     <header>
       <h1>Ryan's Big Beautiful Blog</h1>
     </header>
+    {% for post in posts %}
     <article>
-      <time>published 23.06.2025, 5:42 pm</time>
-      <h2>My First POST!!!!</h2>
-      <p>Hopefully we get this post runnin 🤓</p>
+      <time>published: {{ post.published_date }}</time>
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.text|linebreaksbr }}</p>
     </article>
+    {% endfor %}
   </body>
 </html>
